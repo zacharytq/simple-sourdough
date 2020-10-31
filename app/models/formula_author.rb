@@ -1,0 +1,2 @@
+class FormulaAuthor < ApplicationRecord
+end
