@@ -19,8 +19,8 @@
 - [  ] Formula show, with form to start a bake.
 - [  ] Formula index.
 - [  ] Nested resources for bake.
-- [  ] Make a method that returns all the formulas that the user has authored.
-- [  ] Make a method that returns all the formula_ids that the user has authored.
+- [ x ] Make a method that returns all the formulas that the user has authored.
+- [ x ] Make a method that returns all the formula_ids that the user has authored.
 
     
 
