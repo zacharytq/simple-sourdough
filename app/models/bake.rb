@@ -2,6 +2,10 @@ class Bake < ApplicationRecord
   belongs_to :user
   belongs_to :formula
 
+  def bake_date
+    self.created_at.strftime("%B %e")
+  end
+
   def bake_build
     base = first_step
     formula = self.formula

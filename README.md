@@ -9,7 +9,7 @@
 - [  ] Must use 1 ActiveRecord scope method. Must be chainable. Must use ActiveRecord Query methods.
 - [ x ] Must has standard user authentication.
 - [  ] Must have omniauth login.
-- [  ] Must use nested routes with appropriate RESTful API.
+- [ x ] Must use nested routes with appropriate RESTful API.
 - [  ] Forms must present validation errors with a fields_with_errors class.
 - [  ] Application must be reasonably DRY. 
 
@@ -17,7 +17,7 @@
 
 - [ x ] Formula create and new.
 - [ x ] Formula show, with form to start a bake.
-- [  ] Formula index.
+- [ x ] Formula index.
 - [  ] Nested resources for bake.
 - [ x ] Make a method that returns all the formulas that the user has authored.
 - [ x ] Make a method that returns all the formula_ids that the user has authored.

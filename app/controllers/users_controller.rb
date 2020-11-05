@@ -20,6 +20,8 @@ class UsersController < ApplicationController
   def show
     if logged_in?
       @user = User.find(params[:id])
+      @bakes = Bake.where(user_id: @user.id).limit(5).order(created_at: :asc)
+      
     else
       redirect_to root_path
     end

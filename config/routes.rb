@@ -8,9 +8,9 @@ Rails.application.routes.draw do
     resources :formulas, only: [:index]
   end
   resources :formulas, only: [:show] do
-    resources :bakes, only: [:show, :index, :new, :create]
+    resources :bakes, only: [:show]
   end
-  resources :bakes, only: [:create, :show]
+  resources :bakes, only: [:create]
   get '/login' => "session#login"
   resources :sessions, only: [:create]
 end
