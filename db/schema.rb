@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_31_173910) do
+ActiveRecord::Schema.define(version: 2020_11_05_154251) do
 
   create_table "bakes", force: :cascade do |t|
     t.integer "total_weight"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_10_31_173910) do
     t.decimal "preferment", precision: 4, scale: 3
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "author"
   end
 
   create_table "users", force: :cascade do |t|

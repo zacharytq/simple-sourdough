@@ -1,28 +1,35 @@
 class FormulasController < ApplicationController
-
+  before_action :require_login
   def new
     @formula = Formula.new
   end
 
-  def create
-    if logged_in?
-      @formula = Formula.new(formula_params)
-      if @formula.save
-        redirect_to formula_path(@formula)
+  def index
+    if params[:user_id]
+      if params[:user_id] == session[:user_id]
+        @formulas = Formula.where(author: params[:user_id])
       else
-        render :new
+        redirect_to formulas_path
       end
     else
-      redirect_to root_path
+      @formulas = Formula.all
+    end
+  end
+
+  def create
+    @formula = Formula.new(formula_params)
+    if @formula.save
+      @formula.author = session[:user_id]
+      @formula.save
+      redirect_to formula_path(@formula)
+    else
+      render :new
     end
   end
 
   def show
-    if logged_in?
-      @formula = Formula.find(params[:id])
-    else
-      redirect_to root_path
-    end
+    @formula = Formula.find(params[:id])
+    @bake = @formula.bakes.build
   end
 
   private

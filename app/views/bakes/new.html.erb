@@ -1,2 +1,6 @@
 <%= form_for @bake do |f| %>
-
+  <%= formula_id_field(@bake) %>
+  <%= f.text_field :process %>
+  <%= f.text_field :rating %>
+  <%= f.submit %>
+<% end %>

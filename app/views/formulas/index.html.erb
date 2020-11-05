@@ -1,0 +1,7 @@
+<% if params[:user_id] %>
+  <h3>My Formulas<h3>
+<% end %>
+
+<% @formulas.each do |formula| %>
+  <h4><%= formula.name %></h4>
+<% end %>

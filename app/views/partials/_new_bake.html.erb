@@ -1,0 +1,9 @@
+<%= form_for @bake do |f| %>
+  <% if @bake.formula_id.nil? %>
+    <%= f.select :formula_id, Formula.all.collect { |f| [f.name, f.id] } %><br />
+  <% else %>
+    <%= f.hidden_field :formula_id %>
+  <% end %>
+  <%= f.text_field :total_weight %>
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,78 @@
+<div id="dough_build">
+  <table>
+    <tr>
+      <th>Ingredient</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+      <td>Flour</td>
+      <td><%= @bake.dough_build[:flour] %></td>
+    </tr>
+    <tr>
+      <td>Water</td>
+      <td><%= @bake.dough_build[:water] %></td>
+    </tr>
+    <tr>
+      <td>Salt</td>
+      <td><%= @bake.dough_build[:salt] %></td>
+    </tr>
+    <tr>
+      <td>Levain</td>
+      <td><%= @bake.dough_build[:levain] %></td>
+    </tr>
+  </table>
+</div>
+
+<div id="levain">
+  <table>
+    <tr>
+      <th>Ingredient</th>
+      <th>Weight</th>
+    </tr>
+    <tr>
+      <td>Flour</td>
+      <td><%= @bake.levain_build[:flour] %></td>
+    </tr>
+      <td>Water</td>
+      <td><%= @bake.levain_build[:water] %></td>
+    </tr>
+    <tr>
+      <td>Starter</td>
+      <td><%= @bake.levain_build[:starter] %></td>
+    </tr>
+  </table>
+</div>
+
+<div id="dough">
+  <table>
+    <tr>
+      <th>Ingredient</th>
+      <th>Weight</th>
+      <th>Baker's Percentage</th>
+    </tr>
+    <tr>
+      <td>Flour</td>
+      <td><%= @bake.bake_build[:flour] %></td>
+      <td>100%</td>
+    </tr>
+    <tr>
+      <td>Water</td>
+      <td><%= @bake.bake_build[:water] %></td>
+      <td><%= @bake.formula.hydration %></td>
+    </tr>
+    <tr>
+      <td>Starter</td>
+      <td><%= @bake.bake_build[:starter] %></td>
+      <td><%= @bake.formula.starter %></td>
+    </tr>
+    <tr>
+      <td>Prefermented Flour</td>
+      <td><%= @bake.bake_build[:preferment] %></td>
+      <td><%= @bake.formula.preferment %></td>
+    </tr>
+  </table>
+</div>
+
+
+     
+    
