@@ -5,7 +5,7 @@
 
 - [ x ] Include 1 has_many, 1 belongs_to, 2 has_many through relationships.
 - [ x ] Include a many to many relationship through a join table that has at least one user submittable attribute.
-- [  ] Models must validate for simple attributes.
+- [ x ] Models must validate for simple attributes.
 - [ x ] Must use 1 ActiveRecord scope method. Must be chainable. Must use ActiveRecord Query methods.
 - [ x ] Must has standard user authentication.
 - [  ] Must have omniauth login.

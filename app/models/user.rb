@@ -3,6 +3,8 @@ class User < ApplicationRecord
   has_many :formula_authors
   has_many :formulas, through: :bakes
   has_secure_password
+  validates :name, presence: true
+  
 
   def my_formula_ids
     self.formula_authors.collect { |f| f.formula_id }

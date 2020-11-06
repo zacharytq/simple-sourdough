@@ -1,6 +1,8 @@
 class Bake < ApplicationRecord
   belongs_to :user
   belongs_to :formula
+  validates :total_weight, presence: true
+  
 
   def bake_date
     self.created_at.strftime("%B %e")
