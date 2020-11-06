@@ -1,0 +1,7 @@
+<h2>All Bakes</h2>
+<br />
+
+<% @bakes.each do |b| %>
+  <h4><%= b.formula.name %> Bake on <%= b.bake_date %></h4>
+  <%= link_to "Go to bake.", bake_path(b) %>
+<% end %>

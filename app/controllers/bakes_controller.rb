@@ -1,5 +1,10 @@
 class BakesController < ApplicationController
   before_action :require_login
+
+  def index
+    @bakes = Bake.where(user_id: session[:user_id]).order(created_at: :desc)
+  end
+
   def create
     @bake = Bake.new(bake_params)
     @bake.user_id = session[:user_id]

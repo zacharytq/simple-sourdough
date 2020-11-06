@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :formulas, only: [:show] do
     resources :bakes, only: [:show]
   end
-  resources :bakes, only: [:create]
+  resources :bakes, only: [:show, :create, :index]
   get '/login' => "session#login"
   resources :sessions, only: [:create]
 end
