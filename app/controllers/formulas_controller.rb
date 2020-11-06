@@ -30,6 +30,7 @@ class FormulasController < ApplicationController
   def show
     @formula = Formula.find(params[:id])
     @bake = @formula.bakes.build
+    @bake.user_id = session[:user_id]
   end
 
   private

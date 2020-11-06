@@ -7,7 +7,6 @@ class BakesController < ApplicationController
 
   def create
     @bake = Bake.new(bake_params)
-    @bake.user_id = session[:user_id]
     if @bake.save
       redirect_to formula_bake_path(@bake.formula, @bake)
     else
@@ -17,10 +16,14 @@ class BakesController < ApplicationController
 
   def show
     @bake = Bake.find(params[:id])
+    unless @bake.user.id == session[:user_id]
+      flash[:error] = "You can only view bakes that you created."
+      redirect_to bakes_path
+    end
   end
 
   private
   def bake_params
-    params.require(:bake).permit(:formula_id, :total_weight)
+    params.require(:bake).permit(:formula_id, :total_weight, :user_id)
   end
 end

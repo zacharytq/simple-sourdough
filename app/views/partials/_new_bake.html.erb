@@ -1,4 +1,5 @@
 <%= form_for @bake do |f| %>
+  <%= f.hidden_field :user_id %>
   <% if @bake.formula_id.nil? %>
     <%= f.select :formula_id, Formula.all.collect { |f| [f.name, f.id] } %><br />
   <% else %>

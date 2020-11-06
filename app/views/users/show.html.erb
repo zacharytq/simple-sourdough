@@ -8,7 +8,7 @@
 
 <h2>Recent Bakes</h2>
 <% @bakes.each do |bake| %>
-  <h4><%= bake.formula.name %> Baked on <%= bake.bake_time %></h4>
+  <h4><%= bake.formula.name %> Baked on <%= bake.bake_date %></h4>
   <%= link_to "Go to bake", bake_path(bake) %>
 <% end %>
 

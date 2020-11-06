@@ -47,8 +47,9 @@ class Bake < ApplicationRecord
   end
 
   def first_step
+    weight = self.total_weight
     total_percentage = self.formula.hydration + 100 + self.formula.salt + self.formula.starter
-    base = self.total_weight / total_percentage
+    base = weight / total_percentage
     base
   end
 end

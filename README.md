@@ -9,7 +9,7 @@
 - [ x ] Must use 1 ActiveRecord scope method. Must be chainable. Must use ActiveRecord Query methods.
 - [ x ] Must has standard user authentication.
 - [  ] Must have omniauth login.
-- [ x ] Must use nested routes with appropriate RESTful API.
+- [  ] Must use nested routes with appropriate RESTful API.
 - [  ] Forms must present validation errors with a fields_with_errors class.
 - [  ] Application must be reasonably DRY. 
 
