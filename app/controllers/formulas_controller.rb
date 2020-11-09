@@ -6,11 +6,7 @@ class FormulasController < ApplicationController
 
   def index
     if params[:user_id]
-      if params[:user_id] == session[:user_id]
-        @formulas = Formula.where(author: params[:user_id])
-      else
-        redirect_to formulas_path
-      end
+      @formulas = Formula.where(author: params[:user_id])
     else
       @formulas = Formula.all
     end

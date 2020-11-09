@@ -1,5 +1,5 @@
 <% if params[:user_id] %>
-  <h3>My Formulas<h3>
+  <h3><%= @user.name %>'s Formulas<h3>
 <% end %>
 
 <% @formulas.each do |formula| %>

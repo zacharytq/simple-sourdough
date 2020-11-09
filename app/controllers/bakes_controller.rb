@@ -20,10 +20,31 @@ class BakesController < ApplicationController
       flash[:error] = "You can only view bakes that you created."
       redirect_to bakes_path
     end
+    
+    if @bake.process.nil?
+      render :edit
+    else
+      render :show
+    end
   end
+
+  def update
+    @bake = Bake.find_by(id: params[:id])
+    @bake.update(bake_params)
+    redirect_to bake_path(@bake)
+  end
+
+  def edit
+    @bake = Bake.find_by(id: params[:id])
+    unless @bake.user.id == session[:user_id]
+      flash[:error] = "You can only edit bakes you created!"
+      redirect_to bakes_path
+    end
+  end
+    
 
   private
   def bake_params
-    params.require(:bake).permit(:formula_id, :total_weight, :user_id)
+    params.require(:bake).permit(:formula_id, :process, :total_weight, :user_id)
   end
 end

@@ -1,10 +1,17 @@
 <h1><%= @user.name %></h1>
 <br />
 <h2>Recent Formulas</h2>
+
 <% Formula.where(author: @user.id).limit(5).order(created_at: :asc).each do |formula| %>
   <h4><%= formula.name %></h4>
   <%= link_to "Go to formula.", formula_path(formula) %>
 <% end %>
+
+<%= link_to "All My Formulas", user_formulas_path(@user) %>
+
+<%= link_to "Make a New Formula", new_formula_path %>
+
+<%= link_to "All Formulas", formulas_path %>
 
 <h2>Recent Bakes</h2>
 <% @bakes.each do |bake| %>
