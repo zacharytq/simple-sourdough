@@ -14,7 +14,7 @@ class FormulasController < ApplicationController
 
   def create
     @formula = Formula.new(formula_params)
-    if @formula.save
+    if @formula.valid?
       @formula.author = session[:user_id]
       @formula.save
       redirect_to formula_path(@formula)
