@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   resources :bakes, only: [:show, :create, :index, :update, :edit]
   get '/login' => "session#login"
   resources :sessions, only: [:create]
+  get '/auth/facebook/callback' => 'session#create'
 end
