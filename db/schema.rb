@@ -48,6 +48,7 @@ ActiveRecord::Schema.define(version: 2020_11_11_161341) do
     t.string "uid"
     t.string "image"
     t.string "email"
+    t.string "provider"
   end
 
 end
