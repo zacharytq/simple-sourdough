@@ -9,11 +9,15 @@ class SessionsController < ApplicationController
         u.name = auth['info']['name']
         u.email = auth['info']['email']
         u.image = auth['info']['image']
+        u.password = '1'
       end
 
-      session[:user_id] = @user.id
+      if @user.valid?
+        redirect_to user_path(@user)
+      else
+        redirect_to root_path
+      end
 
-      render 'users/show'
     else
       user = User.find_by(name: params[:user_name])
       if user && user.authenticate(params[:user_password])
@@ -33,7 +37,7 @@ class SessionsController < ApplicationController
   end
 
   private
-  def auth
+    def auth
     request.env['omniauth.auth']
   end
 
