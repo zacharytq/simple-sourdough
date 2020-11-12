@@ -1,7 +1,11 @@
 <% if params[:user_id] %>
   <h3><%= @user.name %>'s Formulas<h3>
 <% end %>
-
+<% if !@formulas.all.empty? %>
 <% @formulas.each do |formula| %>
   <h4><%= formula.name %></h4>
+<% end %>
+<% else %>
+<p>You have no formulas. you can make one here.</p>
+<%= link_to "New Formula", new_formula_path %>
 <% end %>

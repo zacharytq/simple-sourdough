@@ -7,6 +7,7 @@ class FormulasController < ApplicationController
   def index
     if params[:user_id]
       @formulas = Formula.where(author: params[:user_id])
+      @user = current_user
     else
       @formulas = Formula.all
     end
