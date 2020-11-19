@@ -1,7 +1,10 @@
 <%= form_for @formula do |f| %>
   <%= form_errors_for @formula %>
+  <%= f.label :name, 'Formula Name'%><br/>
   <%= f.text_field :name %><br />
+  <%= f.label :hydration, 'Hydration (percentage)'%><br/>
   <%= f.text_field :hydration %><br />
+  <%= f.label :salt, 'Salt (percentage)'%><br/>
   <%= f.text_field :salt %><br />
   <%= f.text_field :starter %><br />
   <%= f.text_field :preferment %><br />

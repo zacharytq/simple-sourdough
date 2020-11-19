@@ -41,6 +41,12 @@ class BakesController < ApplicationController
       redirect_to bakes_path
     end
   end
+
+  def destroy
+    bake = Bake.find(params[:id])
+    bake.destroy
+    redirect_to user_path(current_user)
+  end
     
 
   private

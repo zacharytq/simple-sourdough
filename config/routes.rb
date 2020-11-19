@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :formulas, only: [:show] do
     resources :bakes, only: [:show]
   end
-  resources :bakes, only: [:show, :create, :index, :update, :edit]
+  resources :bakes, only: [:show, :create, :index, :update, :edit, :destroy]
   get '/login' => "sessions#login"
   resources :sessions, only: [:create]
   get 'auth/facebook', as: 'facebook_login'

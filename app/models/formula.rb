@@ -7,5 +7,10 @@ class Formula < ApplicationRecord
   validates :salt, presence: true
   validates :starter, presence: true
   validates :preferment, presence: true
+
+  def author_name
+    user = User.find(self.author)
+    user.name
+  end
   
 end

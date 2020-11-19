@@ -15,10 +15,11 @@ class SessionsController < ApplicationController
       redirect_to user_path(@user)
     else
       @user = User.find_by(name: params[:user_name])
-      if user && user.authenticate(params[:user_password])
-        session[:user_id] = user.id
+      if @user && @user.authenticate(params[:user_password])
+        session[:user_id] = @user.id
         redirect_to user_path(@user)
       else
+        flash[:login_error] = "Incorrect Username or Password!"
         render :login
       end
     end

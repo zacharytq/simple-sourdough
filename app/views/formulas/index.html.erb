@@ -4,8 +4,12 @@
 <% if !@formulas.all.empty? %>
 <% @formulas.each do |formula| %>
   <h4><%= formula.name %></h4>
+  <p>Formula Creator: <%= formula.author_name %></p>
+  <%= link_to "Go to Formula", formula_path(formula) %>
 <% end %>
 <% else %>
 <p>You have no formulas. you can make one here.</p>
+<% end %><br/>
+<br/>
 <%= link_to "New Formula", new_formula_path %>
-<% end %>
+

@@ -1,6 +1,7 @@
 <%= form_tag(sessions_path) do %>
-    <%= text_field_tag :user_name, "user_name", placeholder: 'username' %>
-    <%= text_field_tag :user_password, "user_password", placeholder: "password" %>
+    <%= flash[:login_error] %><br/>
+    <%= text_field_tag :user_name, nil, {placeholder: "Username"} %>
+    <%= password_field_tag :user_password, nil, placeholder: "Password" %><br/>
     <%= submit_tag 'Sign In' %>
 <% end %>
 <%= link_to 'Login with facebook!', facebook_login_path %>
