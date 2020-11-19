@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :bakes, only: [:show, :create, :index, :update, :edit]
   get '/login' => "sessions#login"
   resources :sessions, only: [:create]
-  get 'auth/facebook', as: 'github_login'
+  get 'auth/facebook', as: 'facebook_login'
   get '/auth/facebook/callback', to: 'sessions#create'
 end

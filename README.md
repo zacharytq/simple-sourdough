@@ -8,7 +8,7 @@
 - [ x ] Models must validate for simple attributes.
 - [ x ] Must use 1 ActiveRecord scope method. Must be chainable. Must use ActiveRecord Query methods.
 - [ x ] Must has standard user authentication.
-- [  ] Must have omniauth login.
+- [ x ] Must have omniauth login.
 - [ x ] Must use nested routes with appropriate RESTful API.
 - [ x ] Forms must present validation errors with a fields_with_errors class.
 - [ x ] Application must be reasonably DRY. 
