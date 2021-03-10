@@ -1,4 +1,8 @@
 <h1><%= @formula.name %></h1>
-<h2><%= @formula.hydration %></h1>
+
+<h3>Hydration: <%= @formula.hydration %>%</h3>
+<h3>Salt: <%=@formula.salt%>%</h3>
+<h3>Starter: <%= @formula.starter%>%</h3>
+<h3>Preferment: <%=@formula.preferment%></h3>
 
 <%= render 'shared/new_bake' %>
